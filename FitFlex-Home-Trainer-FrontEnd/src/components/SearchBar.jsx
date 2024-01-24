@@ -27,3 +27,9 @@ function SearchBar({ onSearch }) {
         </div>
       );
     }
+
+    SearchBar.propTypes = {
+        onSearch: PropTypes.func.isRequired,
+      };
+      
+      export default SearchBar; 

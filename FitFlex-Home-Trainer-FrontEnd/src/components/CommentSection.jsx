@@ -8,13 +8,13 @@ function CommentSection() {
 
   // Load comments from the server
   useEffect(() => {
-    fetch('http://localhost:3000/comments')
+    fetch('http://127.0.0.1:5500/comments')
       .then((response) => response.json())
       .then((data) => setComments(data));
   }, []);
 
   const handleAddComment = () => {
-    fetch('http://localhost:3000/comments', {
+    fetch('http://127.0.0.1:5500/comments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ function CommentSection() {
   };
 
   const handleSaveComment = (commentId, updatedText) => {
-    fetch(`http://localhost:3000/comments/${commentId}`, {
+    fetch(`http://127.0.0.1:5500/comments/${commentId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ function CommentSection() {
   };
 
   const handleDeleteComment = (commentId) => {
-    fetch(`http://localhost:3000/comments/${commentId}`, {
+    fetch(`http://127.0.0.1:5500/comments/${commentId}`, {
       method: 'DELETE',
     }).then(() => {
       const updatedComments = comments.filter((comment) => comment.id !== commentId);

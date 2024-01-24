@@ -21,7 +21,7 @@ function AddExercise() {
     e.preventDefault();
     
     // Send a POST request to your JSON server
-    fetch('http://localhost:3000/exercises', {
+    fetch('http://127.0.0.1:5500/exercises', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

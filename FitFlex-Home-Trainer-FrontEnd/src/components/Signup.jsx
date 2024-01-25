@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const Signup = () => {
   const [username, setUsername] = useState('');
@@ -31,6 +31,14 @@ const Signup = () => {
   };
 
   return (
+    <div className='container'>
+      <div className="header-container d-flex justify-content-between align-items-center mt-4">
+      <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
+          <div className="header-buttons">
+            <Link to="/login" className="btn btn-primary me-5">Login</Link>
+            <Link to="/signup" className="btn btn-secondary">Sign Up</Link>
+          </div>
+        </div>
     <div className="Container text-center bg-yellow">
       <h3 className="text-warning fw-bold fs-20">Sign Up Form</h3>
       <form className="form bg-light p-4 rounded" method="post">
@@ -105,6 +113,7 @@ const Signup = () => {
           Already have an account? <a href="#">Login</a>
         </label>
       </form>
+    </div>
     </div>
   );
 };

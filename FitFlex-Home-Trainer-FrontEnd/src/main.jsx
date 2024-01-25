@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/home/" element={<Home/>}/>
+        <Route path="/home" element={<Home/>}/>
         <Route path="/exercise-details/:id" element={<ExerciseDetails />} />
         <Route path="/exercise-daily-routine" element={<ExerciseDailyRoutine />} />
         <Route path="/add-exercise" element={<AddExercise />} />

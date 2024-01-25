@@ -1,23 +1,22 @@
 // App.jsx
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
 import Signup from './components/Signup';
+import Login from './components/Login';
+import Home from './components/Home';
 
-function App() {
+
+function App({setToken}) {
   return (
     <>
       <div className="container">
-        <div className="header-container d-flex justify-content-between align-items-center mt-4">
-          <h1 className="header-text italicize text-warning">
-            <span className="text-green">FITFLEX HOME</span> TRAINER
-          </h1>
-          <div className="header-buttons">
-            <Link to="/login" className="btn btn-primary me-5">Login</Link>
-            <Link to="/signup" className="btn btn-secondary">Sign Up</Link>
-          </div>
-        </div>
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login setToken={setToken} />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
         <Signup />
       </div>
     </>

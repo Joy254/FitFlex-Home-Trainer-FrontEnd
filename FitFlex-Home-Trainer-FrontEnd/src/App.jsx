@@ -1,13 +1,13 @@
+import { useState } from 'react'
+
 import './App.css'
-import CommentSection from './components/CommentSection'
+import Signup from './components/Signup'
 
 function App() {
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      < CommentSection/>
+    <Signup/>
     </>
   )
-}
-
-export default App

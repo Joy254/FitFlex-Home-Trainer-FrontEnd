@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
 
-const Login = ({ setToken }) => {
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -15,9 +15,12 @@ const Login = ({ setToken }) => {
         email,
         password,
       });
-      console.log(response.data)
+
+      // console.log(response.data.access_token)
+
       const { access_token, refresh_token } = response.data;
-      setToken(access_token);
+      // console.log(access_token)
+      // setToken(access_token);
     
 
       // Store tokens in local storage

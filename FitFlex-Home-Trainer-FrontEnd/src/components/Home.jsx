@@ -3,10 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import ExerciseDisplay from './ExerciseDisplay';
-import ExerciseDetails from './ExerciseDetails';
-import ExerciseDailyRoutine from './ExerciseDailyRoutine';
-import AddExercise from './AddExercise';
-import CommentSection from './CommentSection';
+
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -23,12 +20,6 @@ function Home() {
           <NavBar />
           <ExerciseDisplay />
           <SearchBar onSearch={handleSearch} />
-          <Routes>
-            <Route path="/exercise-details/:id" element={<ExerciseDetails />} />
-            <Route path="/exercise-daily-routine" element={<ExerciseDailyRoutine />} />
-            <Route path="/add-exercise" element={<AddExercise />} />
-            <Route path="/comments" element={<CommentSection />} />
-          </Routes>
       </div>
     </div>
   );

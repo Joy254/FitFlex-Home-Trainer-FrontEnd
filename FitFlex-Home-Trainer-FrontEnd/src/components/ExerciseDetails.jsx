@@ -1,6 +1,7 @@
 // ExerciseDetails.js
 import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import NavBar from './NavBar';
 
 function ExerciseDetails() {
   const { id } = useParams();
@@ -19,6 +20,10 @@ function ExerciseDetails() {
   }
 
   return (
+    <div className='container'>
+      <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
+      <br></br>
+        <NavBar />
     <div className='container h-100 mt-5 mb-5'>
     <div className="row h-100 justify-content-center align-items-center">
       <div className="card bg-light" style={{ width: '50%' }}>
@@ -28,10 +33,11 @@ function ExerciseDetails() {
           <p className="mt-2 mb-0">{exercise.description}</p>
         </div>
 
-        <Link to={`/`} className="btn btn-primary me-3">
+        <Link to={`/home/`} className="btn btn-primary me-3">
           Go Back
         </Link>
       </div>
+    </div>
     </div>
     </div>
   );

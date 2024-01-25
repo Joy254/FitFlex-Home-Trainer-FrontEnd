@@ -118,10 +118,10 @@ Fitness Frenzy is an open-source project, licensed under the MIT License. This m
 
 We would like to express our gratitude to the following individuals for their contributions, support, and collaboration on this project:
 
-## Markswell
-## Joy
-## Sheila
-## Robin
+        Markswell
+        Joy
+        Sheila
+        Robin
 
 Thank you for your dedication and efforts, which have played a significant role in the success of this project.
 
@@ -149,11 +149,11 @@ Full-stack Developer Sheila
 
 Full-stack Developer Robinson
 
-### Contributing
+## Contributing
 
 We welcome contributions from the community! If you'd like to contribute to this project, please follow these guidelines:
 
-### Getting Started
+## Getting Started
 
 Fork the repository.
 Clone the forked repository to your local machine.
@@ -170,6 +170,7 @@ Code of Conduct
 Please note that we have a Code of Conduct. By participating in this project, you agree to abide by its terms.
 
 ### Need Help?
+
 If you have questions or encounter issues, feel free to open an issue or reach out to:
 
 [Markswell] at [markswell.ogutu@student.moringaschool.com].
@@ -179,20 +180,22 @@ If you have questions or encounter issues, feel free to open an issue or reach o
 Thank you for contributing!
 
 # License
+
 Fitness Frenzy is an open-source project, licensed under the MIT License. This means you can freely use, modify, and distribute the app, subject to the terms of the license.
 
-### Acknowledgements
+## Acknowledgements
+
 We would like to express our gratitude to the following individuals for their contributions, support, and collaboration on this project:
 
-### Markswell
-### Joy
-### Sheila
-### Robin
+        Markswell
+        Joy
+        Sheila
+        Robinson
 
 Thank you for your dedication and efforts, which have played a significant role in the success of this project.
 
-##### Below are the slides of our work :
+## Below are the slides of our work
+
 Our Work
 
-##### This is our Deployed Website from the main branch
-##### FITNESS FRENZY GYM 💪🏋🏋‍♀ 🤼‍♂.
+# FITFLEX HOME TRAINER 💪🏋🏋‍♀ 🤼‍♂

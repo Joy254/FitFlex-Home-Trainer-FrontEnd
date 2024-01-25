@@ -10,8 +10,13 @@ function CommentSection() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch comments from the server
-    fetch('http://127.0.0.1:5500/comments')
+    // Fetch comments from the server using the access token
+    const accessToken = localStorage.getItem('accessToken');
+    fetch('http://127.0.0.1:5500/comments', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setComments(data.comments || []);
@@ -24,10 +29,13 @@ function CommentSection() {
   }, []);
 
   const handleAddComment = () => {
+    const accessToken = localStorage.getItem('accessToken');
+
     fetch('http://127.0.0.1:5500/comments', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({ text: newComment }),
     })
@@ -46,10 +54,13 @@ function CommentSection() {
   };
 
   const handleSaveComment = (commentId, updatedText) => {
+    const accessToken = localStorage.getItem('accessToken');
+
     fetch(`http://127.0.0.1:5500/comments/${commentId}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify({ text: updatedText }),
     })
@@ -66,8 +77,13 @@ function CommentSection() {
   };
 
   const handleDeleteComment = (commentId) => {
+    const accessToken = localStorage.getItem('accessToken');
+
     fetch(`http://127.0.0.1:5500/comments/${commentId}`, {
       method: 'DELETE',
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
     })
       .then(() => {
         const updatedComments = comments.filter((comment) => comment.id !== commentId);

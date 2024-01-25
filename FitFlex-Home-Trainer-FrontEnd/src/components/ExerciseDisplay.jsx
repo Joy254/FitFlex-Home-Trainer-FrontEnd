@@ -1,14 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ExerciseCard from './ExerciseCard'; // Import ExerciseCard component
 
-const ExerciseList = ({searchTerm}) => {
+const ExerciseDisplay = () => {
   const [exercises, setExercises] = useState([]);
-  const [filteredExercises, setFilteredExercises] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5500/exercises');
+        const accessToken = localStorage.getItem('accessToken');
+        const response = await fetch('http://127.0.0.1:5500/exercises', {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        });
         const data = await response.json();
         setExercises(data.exercises);
       } catch (error) {
@@ -19,9 +23,51 @@ const ExerciseList = ({searchTerm}) => {
     fetchData();
   }, []);
 
+  // Define the handleLike function
+  const handleLike = async (exerciseId, updatedLike) => {
+    try {
+      const accessToken = localStorage.getItem('accessToken');
+      const response = await fetch(`http://127.0.0.1:5500/exercises/${exerciseId}`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ like: updatedLike }),
+      });
+
+      // Handle the response accordingly
+      // You might want to update the state or trigger a refetch of data
+      console.log('Like action:', response.status);
+    } catch (error) {
+      console.error('Error handling like:', error);
+    }
+  };
+
+  // Define the handleDislike function
+  const handleDislike = async (exerciseId, updatedDislike) => {
+    try {
+      const accessToken = localStorage.getItem('accessToken');
+      const response = await fetch(`http://127.0.0.1:5500/exercises/${exerciseId}`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ dislike: updatedDislike }),
+      });
+
+      // Handle the response accordingly
+      // You might want to update the state or trigger a refetch of data
+      console.log('Dislike action:', response.status);
+    } catch (error) {
+      console.error('Error handling dislike:', error);
+    }
+  };
+
   return (
     <div className="exercise-list container mt-5">
-      <h1 className='text-warning fw-bold fs-20'>Exercise List</h1>
+      <h1 className="text-warning fw-bold fs-20">Exercise List</h1>
       <div className="row">
         {exercises.map((exercise) => (
           <ExerciseCard
@@ -36,4 +82,4 @@ const ExerciseList = ({searchTerm}) => {
   );
 };
 
-export default ExerciseList;
+export default ExerciseDisplay;

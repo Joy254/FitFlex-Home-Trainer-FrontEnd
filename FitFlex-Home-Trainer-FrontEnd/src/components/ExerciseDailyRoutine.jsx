@@ -1,13 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import NavBar from './NavBar';
+import { useNavigate } from 'react-router-dom';
 
 const ExerciseDailyRoutine = () => {
   const [exercises, setExercises] = useState([]);
   const [routine, setRoutine] = useState([]);
+  const navigate = useNavigate();
 
-  // Fetch exercise data
   useEffect(() => {
-    fetch('http://127.0.0.1:5500/exercises')
+    // Check if the user is authenticated
+    const accessToken = localStorage.getItem('accessToken');
+    if (!accessToken) {
+      // Redirect to the login page if not authenticated
+      navigate('/login');
+    }
+
+    fetch('http://127.0.0.1:5500/exercises', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    })
       .then((response) => response.json())
       .then((data) => {
         setExercises(data.exercises || []); // Ensure data.exercises is an array
@@ -19,7 +31,7 @@ const ExerciseDailyRoutine = () => {
     // Load routine from localStorage on component mount
     const storedRoutine = JSON.parse(localStorage.getItem('dailyRoutine')) || [];
     setRoutine(storedRoutine);
-  }, []);
+  }, [navigate]);
 
   // Function to handle exercise selection
   const handleExerciseSelect = (event) => {

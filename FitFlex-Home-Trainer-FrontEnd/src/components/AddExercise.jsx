@@ -21,11 +21,15 @@ function AddExercise() {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Send a POST request to your JSON server
+    // Get the access token from local storage
+    const accessToken = localStorage.getItem('accessToken');
+
+    // Send a POST request to your JSON server with the access token in the headers
     fetch('http://127.0.0.1:5500/exercises', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        Authorization: `Bearer ${accessToken}`,
       },
       body: JSON.stringify(exerciseData),
     })

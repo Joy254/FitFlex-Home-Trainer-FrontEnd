@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import NavBar from './NavBar';
 
 function AddExercise() {
   const [exerciseData, setExerciseData] = useState({
@@ -47,6 +48,12 @@ function AddExercise() {
   };
 
   return (
+    <div className='container'>
+      <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
+        <br></br>
+        <br></br>
+        <NavBar />
+ 
     <div className="container d-flex justify-content-center">
       <div className="col-6">
         <h2 className="text-warning">Add Exercise</h2>
@@ -94,6 +101,7 @@ function AddExercise() {
           </div>
         </form>
       </div>
+    </div>
     </div>
   );
 }

@@ -9,7 +9,7 @@ const NavBar = () => {
             <button className="dropdown-toggle">ABOUT US 👇👇👇👇</button>
             <ul className="dropdown-menu">
             <li>
-            <Link to="/">HOME 😊</Link>
+            <Link to="/home">HOME 😊</Link>
           </li>
           <li>
           <Link to="/exercise-daily-routine">EXERCISES ROUTINE😊</Link>
@@ -19,6 +19,9 @@ const NavBar = () => {
         </li>
         <li>
           <Link to="/comments">REVIEWS 💙😊</Link>
+        </li>
+        <li>
+          <Link to="/login">LOGOUT 💙😊</Link>
         </li>
       </ul>
     </li>

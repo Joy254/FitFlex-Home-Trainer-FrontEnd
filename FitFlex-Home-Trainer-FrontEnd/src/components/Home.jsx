@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import SearchBar from './components/SearchBar';
-import ExerciseDisplay from './components/ExerciseDisplay';
-import ExerciseDetails from './components/ExerciseDetails';
-import ExerciseDailyRoutine from './components/ExerciseDailyRoutine';
-import AddExercise from './components/AddExercise';
-import CommentSection from './components/CommentSection';
+import { Routes, Route } from 'react-router-dom';
+import NavBar from './NavBar';
+import SearchBar from './SearchBar';
+import ExerciseDisplay from './ExerciseDisplay';
+import ExerciseDetails from './ExerciseDetails';
+import ExerciseDailyRoutine from './ExerciseDailyRoutine';
+import AddExercise from './AddExercise';
+import CommentSection from './CommentSection';
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -18,22 +18,17 @@ function Home() {
   return (
     <div className="Container">
       <div className="App">
-        <h1 className="text-warning mt-4">FITNESS FRENZY GYM 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
-        <br></br>
-        <Router>
+        <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
+        <br></br>       
           <NavBar />
+          <ExerciseDisplay />
           <SearchBar onSearch={handleSearch} />
           <Routes>
-            <Route
-              path="/"
-              element={<ExerciseDisplay searchTerm={searchTerm} />}
-            />
             <Route path="/exercise-details/:id" element={<ExerciseDetails />} />
             <Route path="/exercise-daily-routine" element={<ExerciseDailyRoutine />} />
             <Route path="/add-exercise" element={<AddExercise />} />
             <Route path="/comments" element={<CommentSection />} />
           </Routes>
-        </Router>
       </div>
     </div>
   );

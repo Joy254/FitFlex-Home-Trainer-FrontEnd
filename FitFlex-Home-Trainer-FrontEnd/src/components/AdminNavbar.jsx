@@ -1,6 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 
-const NavBar = () => {
+const AdminNavbar = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -28,6 +28,9 @@ const NavBar = () => {
               <Link to="/exercise-daily-routine">EXERCISES ROUTINE😊</Link>
             </li>
             <li>
+              <Link to="/add-exercise">ADD EXERCISE FORM 😊</Link>
+            </li>
+            <li>
               <Link to="/comments">REVIEWS 💙😊</Link>
             </li>
             <li>
@@ -40,4 +43,4 @@ const NavBar = () => {
   );
 };
 
-export default NavBar;
+export default AdminNavbar;

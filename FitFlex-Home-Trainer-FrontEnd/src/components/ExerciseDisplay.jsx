@@ -24,10 +24,10 @@ const ExerciseDisplay = () => {
   }, []);
 
   // Define the handleLike function
-  const handleLike = async (exerciseId, updatedLike) => {
+  const handleLike = async (id, updatedLike) => {
     try {
       const accessToken = localStorage.getItem('accessToken');
-      const response = await fetch(`http://127.0.0.1:5500/exercises/${exerciseId}`, {
+      const response = await fetch(`http://127.0.0.1:5500/exercises/${id}`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -45,10 +45,10 @@ const ExerciseDisplay = () => {
   };
 
   // Define the handleDislike function
-  const handleDislike = async (exerciseId, updatedDislike) => {
+  const handleDislike = async (id, updatedDislike) => {
     try {
       const accessToken = localStorage.getItem('accessToken');
-      const response = await fetch(`http://127.0.0.1:5500/exercises/${exerciseId}`, {
+      const response = await fetch(`http://127.0.0.1:5500/exercises/${id}`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,

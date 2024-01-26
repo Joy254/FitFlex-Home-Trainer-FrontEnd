@@ -1,5 +1,3 @@
-// Main.jsx
-
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -14,6 +12,8 @@ import AddExercise from './components/AddExercise'
 import CommentSection from './components/CommentSection';
 import './App.css';
 import './index.css';
+import Admin from './components/Admin';
+import AdminHomepage from './components/AdminHomepage';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -27,6 +27,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         <Route path="/exercise-daily-routine" element={<ExerciseDailyRoutine />} />
         <Route path="/add-exercise" element={<AddExercise />} />
         <Route path="/comments" element={<CommentSection />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/admin/home" element={<AdminHomepage />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

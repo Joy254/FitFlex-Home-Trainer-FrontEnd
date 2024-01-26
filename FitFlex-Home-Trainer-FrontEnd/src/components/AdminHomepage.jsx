@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import NavBar from './NavBar';
+import AdminNavbar from './AdminNavbar';
 import SearchBar from './SearchBar';
 import ExerciseDisplay from './ExerciseDisplay';
 
 
-function Home() {
+function AdminHomepage() {
   const [ setSearchTerm] = useState('');
 
   const handleSearch = (searchTerm) => {
@@ -16,12 +16,12 @@ function Home() {
       <div className="App">
         <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
         <br></br>       
-          <NavBar />
+          <AdminNavbar />
           <ExerciseDisplay />
           <SearchBar onSearch={handleSearch} />
       </div>
     </div>
   );
 }
-export default Home;
+export default AdminHomepage;
 

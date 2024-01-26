@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -36,7 +36,8 @@ const Signup = () => {
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
           <div className="header-buttons">
             <Link to="/login" className="btn btn-primary me-5">Login</Link>
-            <Link to="/signup" className="btn btn-secondary">Sign Up</Link>
+            <Link to="/signup" className="btn btn-secondary me-5">Sign Up</Link>
+            <Link to="/admin" className="btn btn-danger">Admin</Link>
           </div>
         </div>
     <div className="Container text-center bg-yellow">

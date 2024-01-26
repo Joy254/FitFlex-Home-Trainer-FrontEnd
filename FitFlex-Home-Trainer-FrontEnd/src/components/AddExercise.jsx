@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import NavBar from './NavBar';
 
 function AddExercise() {
@@ -45,6 +45,7 @@ function AddExercise() {
         likes: 0,
         dislikes: 0,
       });
+      alert('Exercise Added Successfully');
     })
     .catch((error) => {
       console.error('Error adding exercise:', error);

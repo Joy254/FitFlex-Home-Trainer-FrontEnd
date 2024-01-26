@@ -1,5 +1,5 @@
 // src/components/Login.js
-import React, { useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, Link } from 'react-router-dom';
 
@@ -40,7 +40,8 @@ const Login = () => {
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
           <div className="header-buttons">
             <Link to="/login" className="btn btn-primary me-5">Login</Link>
-            <Link to="/signup" className="btn btn-secondary">Sign Up</Link>
+            <Link to="/signup" className="btn btn-secondary me-5">Sign Up</Link>
+            <Link to="/admin" className="btn btn-danger">Admin</Link>
           </div>
         </div>
     <div className="login-container">
@@ -71,14 +72,14 @@ const Login = () => {
           />
         </div>
   
-        <div className="mb-3 form-check">
+        {/* <div className="mb-3 form-check">
           <input type="checkbox" className="form-check-input" id="showPassword" />
           <label className="form-check-label" htmlFor="showPassword">Show</label>
-        </div>
+        </div> */}
   
         <div className="mb-3 form-check">
           <input type="checkbox" className="form-check-input" id="rememberDevice" />
-          <label className="form-check-label" htmlFor="rememberDevice">Remember this device</label>
+          <label className="form-check-label" htmlFor="rememberDevice">Remember me!</label>
         </div>
   
         <button type="button" className="btn btn-primary" onClick={handleLogin}>Sign In</button>

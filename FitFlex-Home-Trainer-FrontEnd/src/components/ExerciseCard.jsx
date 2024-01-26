@@ -16,13 +16,13 @@ const ExerciseCard = ({ exercise, onLike, onDislike }) => {
   };
 
   return (
-    <div className="col-md-2 mb-3">
+    <div className="col-md-3 mb-3">
       <div className="card">
         <img
           src={exercise.image}
           alt={exercise.name}
           className="card-img-top"
-          style={{ height: '150px', objectFit: 'cover' }}
+          style={{ height: '250px', objectFit: 'cover' }}
         />
         <div className="card-body">
           <h5 className="card-title">{exercise.name}</h5>

@@ -16,7 +16,11 @@ const Signup = () => {
         alert('Passwords do not match');
         return;
       }
-
+      // Check if username is 'admin' or 'Admin'
+    if (username.toLowerCase() === 'admin') {
+      alert('Invalid username. Please choose a different username.');
+      return;
+    }
       const response = await axios.post('http://127.0.0.1:5500/register', {
         username,
         email,
@@ -42,7 +46,7 @@ const Signup = () => {
         </div>
     <div className="Container text-center bg-yellow">
       <h3 className="text-warning fw-bold fs-20">Sign Up Form</h3>
-      <form className="form bg-light p-4 rounded" method="post">
+      <form className="form bg-light p-4 rounded mb-5" method="post">
         <div className="mb-3">
           <label htmlFor="name" className="form-label text-primary fw-bold fs-4">
             Username

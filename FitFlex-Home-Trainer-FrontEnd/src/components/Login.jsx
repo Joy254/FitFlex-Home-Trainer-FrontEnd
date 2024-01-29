@@ -15,24 +15,25 @@ const Login = () => {
         email,
         password,
       });
-
-      // console.log(response.data.access_token)
-
+  
       const { access_token, refresh_token } = response.data;
-      // console.log(access_token)
-      // setToken(access_token);
-    
-
-      // Store tokens in local storage
-      localStorage.setItem('accessToken', access_token);
-      localStorage.setItem('refreshToken', refresh_token);
-
-      // Redirect to home or another page
-      navigate('/home');
+  
+      // Assuming you have a way to verify admin status in your backend
+      if (email === 'admin@gmail.com') {
+        localStorage.setItem('accessToken', access_token);
+        localStorage.setItem('refreshToken', refresh_token);
+        navigate('/admin/home');
+      } else {
+        // Regular user, redirect to home
+        localStorage.setItem('accessToken', access_token);
+        localStorage.setItem('refreshToken', refresh_token);
+        navigate('/home');
+      }
     } catch (error) {
       alert('Error logging in:', error);
     }
   };
+  
 
   return (
     <div className='container'>
@@ -41,7 +42,6 @@ const Login = () => {
           <div className="header-buttons">
             <Link to="/login" className="btn btn-primary me-5">Login</Link>
             <Link to="/signup" className="btn btn-secondary me-5">Sign Up</Link>
-            <Link to="/admin" className="btn btn-danger">Admin</Link>
           </div>
         </div>
     <div className="login-container">

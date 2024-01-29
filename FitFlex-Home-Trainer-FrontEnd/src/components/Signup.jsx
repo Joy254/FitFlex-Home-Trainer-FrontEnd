@@ -41,7 +41,6 @@ const Signup = () => {
           <div className="header-buttons">
             <Link to="/login" className="btn btn-primary me-5">Login</Link>
             <Link to="/signup" className="btn btn-secondary me-5">Sign Up</Link>
-            <Link to="/admin" className="btn btn-danger">Admin</Link>
           </div>
         </div>
     <div className="Container text-center bg-yellow">

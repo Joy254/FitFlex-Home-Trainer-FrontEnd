@@ -15,7 +15,6 @@ const Admin = () => {
         password,
       });
 
-      const { access_token, refresh_token } = response.data;
 
       // Assuming you have a way to verify admin status in your backend
       if (email === 'admin@gmail.com') {

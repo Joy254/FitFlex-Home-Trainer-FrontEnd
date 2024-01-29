@@ -96,10 +96,12 @@ function CommentSection() {
 
   return (
     <div className="container mt-4">
+      <div className='container bg-dark p-1 mb-1'>
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
         <br></br>
-        <br></br>
         <NavBar />
+      </div>
+      <div className='container'>
       <h1 className="text-center text-warning">Comment Section</h1>
       <div className="container" style={{ width: '50%' }}>
       <Form className="mb-3">
@@ -167,6 +169,7 @@ function CommentSection() {
           ))}
         </ListGroup>
       )}
+    </div>
     </div>
     </div>
   );

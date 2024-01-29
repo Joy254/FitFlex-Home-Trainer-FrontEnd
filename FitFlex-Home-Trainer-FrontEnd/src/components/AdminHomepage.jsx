@@ -14,11 +14,14 @@ function AdminHomepage() {
   return (
     <div className="Container">
       <div className="App">
+        <div className='container bg-dark p-1 mb-1 mt-3'>
         <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
         <br></br>       
           <AdminNavbar />
-          <ExerciseDisplay />
           <SearchBar onSearch={handleSearch} />
+          </div>
+          <ExerciseDisplay />
+          
       </div>
     </div>
   );

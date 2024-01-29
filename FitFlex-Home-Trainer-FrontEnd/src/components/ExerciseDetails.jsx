@@ -21,9 +21,11 @@ function ExerciseDetails() {
 
   return (
     <div className='container'>
+      <div className='container bg-dark p-1 mb-1 mt-3'>
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
       <br></br>
         <NavBar />
+      </div>
     <div className='container h-100 mt-5 mb-5'>
     <div className="row h-100 justify-content-center align-items-center">
       <div className="card bg-light" style={{ width: '50%' }}>

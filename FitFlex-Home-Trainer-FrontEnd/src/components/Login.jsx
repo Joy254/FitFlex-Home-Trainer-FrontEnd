@@ -37,7 +37,7 @@ const Login = () => {
 
   return (
     <div className='container'>
-      <div className="header-container d-flex justify-content-between align-items-center mt-4">
+      <div className="header-container d-flex justify-content-between align-items-center mt-4 bg-dark mt-3 mb-1 p-1">
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
           <div className="header-buttons">
             <Link to="/login" className="btn btn-primary me-5">Login</Link>

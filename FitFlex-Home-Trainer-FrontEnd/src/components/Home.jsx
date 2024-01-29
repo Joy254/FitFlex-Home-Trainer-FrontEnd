@@ -13,12 +13,13 @@ function Home() {
 
   return (
     <div className="Container">
-      <div className="App">
+      <div className='container'>
+      <div className="App bg-dark mt-3 mb-1 p-1">
         <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
-        <br></br>       
-          <NavBar />
+        <NavBar />
+        <SearchBar onSearch={handleSearch} />
+        </div>          
           <ExerciseDisplay />
-          <SearchBar onSearch={handleSearch} />
       </div>
     </div>
   );

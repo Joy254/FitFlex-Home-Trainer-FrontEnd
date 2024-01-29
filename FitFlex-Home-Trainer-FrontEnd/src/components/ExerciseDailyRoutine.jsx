@@ -54,12 +54,13 @@ const ExerciseDailyRoutine = () => {
 
   return (
     <div className='container'>
+      <div className='container bg-dark mt-3 mb-1 p-1'>
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
       <br></br>
-      <br></br>
       <NavBar />
-      <div className="container mt-5" style={{ width: "70%" }}>
-        <h2 className="text-warning">Daily Routine</h2>
+      </div>
+      <div className="container mt-5 bg-dark mb-5" style={{ width: "70%" }}>
+        <h2 className="text-warning mt-3">Daily Routine</h2>
         <div className="row">
           <div className="col-md-6">
             <div className="form-group">

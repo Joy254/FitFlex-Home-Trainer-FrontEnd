@@ -54,11 +54,12 @@ function AddExercise() {
 
   return (
     <div className='container'>
+      <div className='container bg-dark p-1 mb-1 mt-3'>
       <h1 className="text-warning mt-4 text-center">FITFLEX HOME TRAINER 💪🏋️🏋️‍♀️ 🤼‍♂️</h1>
         <br></br>
         <br></br>
         <NavBar />
- 
+      </div>
     <div className="container d-flex justify-content-center">
       <div className="col-6">
         <h2 className="text-warning">Add Exercise</h2>
